@@ -35,6 +35,29 @@ String - not a datatype
 1024 mb - 1 gb
 1024 bg - 1 tb
 
+*********************************
+*********************************
+operators : 
+
+unary
+turnary
+arithmatic
+logical
+comparision
+
+
+***********************
+Statements : 
+
+conditional : if-else , switch-case
+looping : for - while, do-while
+control : break, continue
+
+
+
+
+
+
 
 
 
