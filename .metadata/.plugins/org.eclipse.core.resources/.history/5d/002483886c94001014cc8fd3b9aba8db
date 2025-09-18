@@ -1,0 +1,25 @@
+package logical;
+
+public class DTB {
+	public static void main(String[] args) {
+		
+		
+		long num = 123;
+		long sum = 0;
+		long count=1;
+		while(num!=0)
+		{
+			
+			long rem = num%2;
+			System.out.println(rem);
+			num = num/2;
+			
+		}
+		
+//		System.out.println(sum);
+		
+		//
+		
+		
+	}
+}

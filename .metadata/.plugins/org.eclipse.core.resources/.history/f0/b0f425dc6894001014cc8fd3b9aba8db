@@ -1,0 +1,22 @@
+package logical;
+
+public class DTB {
+	public static void main(String[] args) {
+		
+		
+		int num = 1234;
+		int sum = 0;
+		int count=1;
+		while(num!=0)
+		{
+			
+			int rem = num%2;
+			sum = (rem*count) + sum;
+			num = num/2;
+			count*=10;
+		}
+		
+		System.out.println(sum);
+		
+	}
+}
