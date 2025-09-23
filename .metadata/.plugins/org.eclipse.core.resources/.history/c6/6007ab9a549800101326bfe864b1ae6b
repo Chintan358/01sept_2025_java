@@ -1,0 +1,19 @@
+package array;
+
+public class A004_Arrayoperations {
+	public static void main(String[] args) {
+		
+		
+		int a[] = {10,45,68,64,45,12,36,98,12};
+		
+		int sum = 0;
+		
+		for (int i = 0; i < a.length; i++) {
+			sum+=a[i];
+		}
+		
+		System.out.println(sum);
+		
+		
+	}
+}

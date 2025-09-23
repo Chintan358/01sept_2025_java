@@ -1,0 +1,22 @@
+package array;
+
+public class A005_sorting {
+	public static void main(String[] args) {
+		
+		
+		
+		int a[] = {10,40,5,68,64,45,98,12,36,98,12,70};
+		
+		
+		
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i;j<a.length;j++)
+			{
+				System.out.println(a[i]+" "+a[j]);
+			}
+		}
+		
+		
+	}
+}
