@@ -1,0 +1,25 @@
+package oops;
+
+class Pen
+{
+	//data memeber
+	int price=10;
+	String color = "Red";
+	
+	//function memebr
+	public void toWrite()
+	{
+		System.out.println(price+" "+color);
+	}
+	
+	
+}
+
+public class O001_ClassDemo {
+	public static void main(String[] args) {
+		
+		
+		
+		
+	}
+}

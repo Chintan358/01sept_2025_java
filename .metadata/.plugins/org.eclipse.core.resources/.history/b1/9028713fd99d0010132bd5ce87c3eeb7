@@ -1,0 +1,42 @@
+package oops;
+
+class P
+{
+	P()
+	{
+		System.out.println("runing P class const...");
+	}
+}
+
+
+class Q extends P
+{
+	Q()
+	{
+		super();
+		System.out.println("runing Q class const...");
+	}
+	
+	Q(int i)
+	{
+		System.out.println(i);
+	}
+}
+
+class R extends Q
+{
+	R()
+	{
+		super();
+		System.out.println("runing R class const...");
+	}
+}
+
+public class O006_ConstructorChaining {
+	public static void main(String[] args) {
+		
+		
+		R r = new R();
+		
+	}
+}

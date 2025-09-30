@@ -1,0 +1,23 @@
+package oops;
+
+
+class Student
+{
+	int id;
+	String name;
+	
+	public void display()
+	{
+		System.out.println(id+" "+name);
+	}
+}
+public class O002_ConstructorDemo {
+	public static void main(String[] args) {
+		
+		
+		Student st  =new Student();
+		st.display();
+		
+		
+	}
+}

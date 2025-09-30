@@ -44,14 +44,31 @@ public class A006_MDArray {
 		System.out.println("==========================");
 		
 		
-		for(int i=0;i<3;i++)
+//		for(int i=0;i<3;i++)
+//		{
+//			for(int j=0;j<3;j++)
+//			{
+//				System.out.print(a[i][j]+b[i][j]+" ");
+//			}
+//			
+//			System.out.println();
+//		}
+		
+		
+		
+		for (int i = 0; i < 3; i++)
 		{
-			for(int j=0;j<3;j++)
-			{
-				System.out.print(a[i][j]+b[i][j]+" ");
-			}
-			
-			System.out.println();
+            for (int j = 0; j < 3; j++) 
+            {
+            	int c[][] = new int[3][3];
+                for (int k = 0; k < 3; k++)
+                {
+                    c[i][j] += a[i][k] * b[k][j];
+                    
+                }
+                System.out.println(c[i][j]);
+            }
+		
 		}
 	}
 }

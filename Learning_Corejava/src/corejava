@@ -53,7 +53,33 @@ conditional : if-else , switch-case
 looping : for - while, do-while
 control : break, continue
 
+************************************
+************************************
+OOPs : 
 
+class
+object
+inheritance
+Polymorphism
+abstraction
+encaptulation
+
+
+Object : 
+real time entity
+
+- state / variables / data memebr
+-behaviour / methods / function memebr
+
+class : 
+logical entity or blueprint 
+
+function : 
+
+accessmodifier retrun type*  functionname(args)
+{
+
+}
 
 
 
