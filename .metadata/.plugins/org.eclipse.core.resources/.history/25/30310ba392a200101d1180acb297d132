@@ -1,0 +1,23 @@
+package oops;
+
+class Base
+{
+	public void test()
+	{
+		System.out.println("Running Class Base test....");
+	}
+}
+
+class Derived extends Base
+{
+	
+}
+public class O009_MethodOverriding {
+	public static void main(String[] args) {
+		
+		
+		Derived d = new Derived();
+		d.test();
+		
+	}
+}

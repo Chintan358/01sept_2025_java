@@ -1,0 +1,16 @@
+package basic;
+
+public class CMD {
+	public static void main() {
+		
+		
+//		System.out.println(args.length);
+//		
+//		for (int i = 0; i < args.length; i++) {
+//			System.out.println(args[i]);
+//		}
+		
+		System.out.println("additoio of "+a[0]+" and "+a[1]+" is  : "+(Integer.parseInt(a[0])+Integer.parseInt(a[1])));
+		
+	}
+}
