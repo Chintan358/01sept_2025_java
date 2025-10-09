@@ -1,0 +1,31 @@
+package impclasses;
+
+public class I005_Wrapper {
+	public static void main(String[] args) {
+		
+		int i = 10;
+		
+		//boxing
+		Integer i1 = new Integer(i);
+		
+		//auto boxing
+		Integer i2 = i;
+		
+		
+		Integer a = 15;
+		
+		//unboxing
+		int a1 = a.intValue();
+		
+		//auo-unboxing
+		int a2 = a;
+		
+		
+		int k = 45454545;
+		
+		Integer k1 = k;
+		int l= k1.toString().length();
+		System.out.println(l);
+		
+	}
+}

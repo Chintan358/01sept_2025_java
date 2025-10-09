@@ -83,6 +83,29 @@ accessmodifier retrun type*  functionname(args)
 
 
 
+*************************************
+Abstraction  : 
+
+Abstract class : partial
+-contains both abstract and instancee method
+
+Interface  :fully
+-contians only abstract methods
+
+
+**************************************
+IMP classes : 
+
+String
+String buffer
+String builder
+Wrapper
+Object
+Random
+Date
+Math
+
+
 
 
 

@@ -7,4 +7,16 @@
     <fullyQualifiedTypeName name="oops.Calc"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="oops.R"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="oops.Emp"/>
+    <fullyQualifiedTypeName name="oops.Calc1"/>
+    <fullyQualifiedTypeName name="oops.Derived"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="oops.AbsImpl"/>
+    <fullyQualifiedTypeName name="oops.InterImpl"/>
+    <fullyQualifiedTypeName name="oops.Access"/>
+    <fullyQualifiedTypeName name="oops.Saving"/>
+    <fullyQualifiedTypeName name="oops.Loan"/>
+    <fullyQualifiedTypeName name="oops.Circle"/>
+    <fullyQualifiedTypeName name="oops.Triangle"/>
 </qualifiedTypeNameHistroy>

@@ -2,7 +2,7 @@ package oops;
 
 class Base
 {
-	private void test()
+	public void test()
 	{
 		System.out.println("Running Class Base test....");
 	}
@@ -11,7 +11,7 @@ class Base
 class Derived extends Base
 {
 
-	
+	@Override
 	public void test() {
 		System.out.println("Running class Derived test");
 	}

@@ -1,0 +1,12 @@
+package oops;
+
+public class O014_FinalDemo {
+	public static void main(String[] args) {
+		
+		
+		int a = 20;
+		a=200;
+		System.out.println(a);
+		
+	}
+}
