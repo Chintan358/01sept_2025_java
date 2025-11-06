@@ -1,3 +1,7 @@
+/**
+ * The class demonstrates the difference between using string literals and string objects in Java,
+ * along with examples of comparing strings using equals() method and == operator.
+ */
 package impclasses;
 
 public class I001_String {

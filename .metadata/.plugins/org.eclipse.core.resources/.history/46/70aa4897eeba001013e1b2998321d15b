@@ -1,0 +1,33 @@
+package thread;
+
+class Calc
+{
+	synchronized public void table(int number)
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(Thread.currentThread().getName()+" : "+number*i);
+		}
+	}
+}
+
+class Test extends Thread
+{
+	public void run()
+	{
+		Calc c = new Calc();
+		c.table(5);
+	}
+}
+public class T005_MethodSync {
+	public static void main(String[] args) {
+		
+		Test t1  =new Test();
+		Test t2  =new Test();
+		Test t3  =new Test();
+		
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}

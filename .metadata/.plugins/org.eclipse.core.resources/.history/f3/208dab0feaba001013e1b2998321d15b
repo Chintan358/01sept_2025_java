@@ -1,0 +1,39 @@
+package thread;
+
+class Account
+{
+	double balance;
+	
+	Account(double balance)
+	{
+		this.balance=balance;
+	}
+}
+
+class Customer extends Thread
+{
+	String name;
+	Customer(String name)
+	{		
+		this.name = name;
+	}
+	
+	public void run()
+	{
+		System.out.println("abc"+name);
+	}
+}
+
+public class T004_BlockSync {
+	public static void main(String[] args) {
+		
+		Account ac  =new Account(50000);
+		
+		Customer c1 = new Customer("Gopal");
+		Customer c2 = new Customer("Kano");
+		
+		c1.start();
+		c2.start();
+		
+	}
+}

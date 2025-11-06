@@ -1,3 +1,7 @@
+/**
+ * This Java class compares the performance of StringBuffer and StringBuilder by appending a string in
+ * a loop.
+ */
 package impclasses;
 
 public class I004_StrngBuffervsBuilder {
