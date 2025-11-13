@@ -1,0 +1,21 @@
+package basic;
+
+import com.Demo;
+
+public class Demo {
+	public static void main(String[] args) {
+		
+//		System.out.println("Ok");
+		
+		int a = 10;
+		String name = "Hello";
+		String fname = "Test";
+		
+		
+		Demo t  =new Demo();
+		System.out.println(t.i);
+		t.disp();
+		
+		
+	}
+}

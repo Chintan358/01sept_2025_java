@@ -1,0 +1,24 @@
+package collection;
+
+import java.util.ArrayList;
+
+public class C001_ArraylistDemo {
+	public static void main(String[] args) {
+		
+		
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("Java");
+		al.add("Php");
+		al.add("Android");
+		al.add("SQL");
+		
+		al.add(1,"Oracle");
+		
+		
+		for(String s:al)
+		{
+			System.out.println(s);
+		}
+		
+	}
+}

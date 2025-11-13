@@ -1,0 +1,13 @@
+package basic;
+
+public class Basic {
+		public static void main(String[] args) {
+			
+			System.out.println(0233);
+			
+			Demo t  =new Demo();
+			System.out.println(t.i);
+			t.disp();
+			
+		}
+}

@@ -1,0 +1,18 @@
+package com;
+class Test
+{
+	public int i = 10;
+	public void disp()
+	{
+		System.out.println(i);
+	}
+}
+public class TEst {
+
+	public static void main(String[] args) {
+
+		Test t  =new Test();
+		System.out.println(t.i);
+		t.disp();
+	}
+}
