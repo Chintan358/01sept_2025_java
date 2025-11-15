@@ -1,0 +1,23 @@
+package collection;
+
+import java.util.HashMap;
+
+public class C011_HashmapDemo {
+	public static void main(String[] args) {
+		
+		
+		HashMap<String, Integer> map
+			=new HashMap();
+		
+		map.put("Java", 50);
+		map.put("Php", 51);
+		map.put("Android", 49);
+		map.put("Python", 45);
+		map.put("Java", 50);
+		
+		System.out.println(map);
+		
+		
+		
+	}
+}
