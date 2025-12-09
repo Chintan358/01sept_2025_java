@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(218, 218, 230, 1) 1%, rgba(190, 217, 233, 1) 53%, rgba(0, 212, 255, 1) 83%);
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    background-color: black
+}
+
+footer {
+    width: 100%;
+    height: 15%;
+    background-color: black;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 20%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+
+    width: 80%;
+    height: 100%;
+    float: right;
+    color: #FFF;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 20%;
+    height: 50%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px;
+    background: #3F5EFB;
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    color: white;
+}
+
+.tf {
+    width: 150px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.btn {
+    width: 73px;
+    height: 30px;
+    border: 1px solid black;
+}
