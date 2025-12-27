@@ -12,15 +12,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-5 mx-auto mt-3 p-5 card">
-				<h2>Student Registration</h2>
+				<h2>Student Update</h2>
 				<hr>
 		<span class="text-success">${msg}</span>
-		<form action="reg" method="post">
-		<input type="text" name="name" placeholder="Enter name" class="form-control">
+		<form action="edit" method="post">
+		<input type="hidden" name="id" value="${student.id }" >
+		<input type="text" name="name" placeholder="Enter name" class="form-control" value="${student.name }">
 		<br>
-		<input type="text" name="email" placeholder="Enter eamil" class="form-control">
+		<input type="text" name="email" placeholder="Enter eamil" class="form-control" value="${student.email }">
 		<br>
-		<input type="text" name="phone" placeholder="Enter phone" class="form-control">
+		<input type="text" name="phone" placeholder="Enter phone" class="form-control" value="${student.phone }">
 <br>
 		<input type="submit" class="btn btn-success">	
 		<input type="reset" class="btn btn-primary">

@@ -22,7 +22,7 @@
 			<th>Name</th>
 			<th>Email</th>
 			<th>Phone</th>
-			<th>Action</th>
+			<th colspan="2">Action</th>
 			</tr>
 			
 		<%
@@ -35,12 +35,13 @@
 				<td><%=st.getEmail()%></td>
 				<td><%=st.getPhone()%></td>
 				<td><a href="delete?sid=<%=st.getId()%>" class="btn btn-danger">Delete</a></td>
+				<td><a href="edit?eid=<%=st.getId()%>" class="btn btn-primary">Update</a></td>
 				</tr>
 			<%}
 		%>
 		
 		</table>
-		<a href="index.jsp" class="btn btn-success`">Back to register</a>
+		<a href="index.jsp" class="btn btn-success">Back to register</a>
 		</div>
 		</div>
 		</div>
