@@ -24,10 +24,10 @@
 		<input type="text" name="phone" placeholder="Enter phone" class="form-control" value="${student.phone }">
 <br>
 		<input type="submit" class="btn btn-success">	
-		<input type="reset" class="btn btn-primary">
-		<a href="display" class="btn btn-warning">Display</a>	
+		<input type="reset" class="b btn-warning">Display</a>	
 		</form>
-		
+		tn btn-primary">
+		<a href="display" class="btn
 		</div>
 			</div>
 		</div>
