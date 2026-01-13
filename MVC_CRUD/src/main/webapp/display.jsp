@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
 			<th colspan="2">Action</th>
 			</tr>
 			
-		<%
+		<%-- <%
 			ArrayList<Student> al = (ArrayList)request.getAttribute("data");
 			for(Student st : al)
 			{ %>
@@ -38,7 +39,18 @@
 				<td><a href="edit?eid=<%=st.getId()%>" class="btn btn-primary">Update</a></td>
 				</tr>
 			<%}
-		%>
+		%> --%>
+		
+		<c:forEach var="dt" items="${data}">
+				<tr>
+				<td>${dt.getId()}</td>
+				<td>${dt.getName()}</td>
+				<td>${dt.getEmail()}></td>
+				<td>${dt.getPhone()}</td>
+				<td><a href="delete?sid=${dt.getId()}" class="btn btn-danger">Delete</a></td>
+				<td><a href="edit?eid=${dt.getId()}" class="btn btn-primary">Update</a></td>
+				</tr>
+		</c:forEach>
 		
 		</table>
 		<a href="index.jsp" class="btn btn-success">Back to register</a>
