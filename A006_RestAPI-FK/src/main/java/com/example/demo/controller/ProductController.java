@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,6 +46,34 @@ public class ProductController {
 			
 			return new ResponseEntity<>(productToDto(createproduct), HttpStatus.OK);
 		}
+		
+		@GetMapping("/")
+		public ResponseEntity<List<ProductDto>> list()
+		{
+			List<Product> products = productService.list();
+			List<ProductDto> pros = new ArrayList<>();
+			for(Product p : products)
+			{
+				pros.add(productToDto(p));
+			}
+			
+			return new ResponseEntity<>(pros,HttpStatus.OK);
+		}
+		
+		@GetMapping("/category/{id}")
+		public ResponseEntity<List<ProductDto>> catlist(@PathVariable("id") int id)
+		{
+			
+			List<Product> products = productService.catlist(categoryService.retrive(id));
+			List<ProductDto> pros = new ArrayList<>();
+			for(Product p : products)
+			{
+				pros.add(productToDto(p));
+			}
+			
+			return new ResponseEntity<>(pros,HttpStatus.OK);
+		}
+		
 		
 		public ProductDto productToDto(Product p)
 		{

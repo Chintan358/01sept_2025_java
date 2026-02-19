@@ -49,6 +49,12 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
+	@Override
+	public List<Product> catlist(Category c) {
+		// TODO Auto-generated method stub
+		return productRepo.findByCategory(c);
+	}
+
 	
 
 

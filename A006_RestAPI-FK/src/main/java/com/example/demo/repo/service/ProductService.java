@@ -12,4 +12,5 @@ public interface ProductService {
 			public Product retrive(int cid);
 			public Product update(Product c, int id);
 			public void destroy(int id);
+			public List<Product> catlist(Category c);
 }
