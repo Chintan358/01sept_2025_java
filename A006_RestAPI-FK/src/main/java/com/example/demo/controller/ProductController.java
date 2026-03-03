@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,9 @@ public class ProductController {
 		
 		@Autowired
 		CategoryService categoryService;
+		
+		@Autowired
+		ModelMapper mapper;
 
     ProductController(CategoryController categoryController) {
         this.categoryController = categoryController;
@@ -75,16 +79,19 @@ public class ProductController {
 		}
 		
 		
+//		public ProductDto productToDto(Product p)
+//		{
+//			ProductDto dto = new ProductDto();
+//			dto.setId(p.getId());
+//			dto.setName(p.getName());
+//			dto.setPrice(p.getPrice());
+//			dto.setQty(p.getQty());			
+//			dto.setCategory(categoryController.categoryToDto(p.getCategory()));
+//			return dto;		
+//		}
+		
 		public ProductDto productToDto(Product p)
 		{
-			ProductDto dto = new ProductDto();
-			dto.setId(p.getId());
-			dto.setName(p.getName());
-			dto.setPrice(p.getPrice());
-			dto.setQty(p.getQty());			
-			dto.setCategory(categoryController.categoryToDto(p.getCategory()));
-			return dto;
-			
-			
+			return mapper.map(p, ProductDto.class);
 		}
 }
