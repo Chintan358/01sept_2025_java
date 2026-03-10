@@ -2,6 +2,7 @@ package com.eshop.demo.controller;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eshop.demo.dto.UserDto;
+import com.eshop.demo.model.Role;
+import com.eshop.demo.model.User;
 import com.eshop.demo.repo.CartItemRepository;
 import com.eshop.demo.service.RoleService;
 import com.eshop.demo.service.UserService;
@@ -30,6 +33,8 @@ public class UserController {
 		
 		@Autowired
 		UserService service;
+		
+		
 
     UserController(CartItemRepository cartItemRepository) {
         this.cartItemRepository = cartItemRepository;
@@ -58,5 +63,12 @@ public class UserController {
 			
 			return new ResponseEntity<>(updated,HttpStatus.CREATED);
 			
+		}
+		
+		@GetMapping("/role/{id}")
+		public ResponseEntity<List<UserDto>> retrivebyrole(@PathVariable("id") Long id)
+		{
+			List<UserDto> users = service.retrivebyrole(id);
+			return new ResponseEntity<>(users,HttpStatus.OK);
 		}
 }

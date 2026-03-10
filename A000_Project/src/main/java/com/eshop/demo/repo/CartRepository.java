@@ -5,8 +5,10 @@ package com.eshop.demo.repo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.eshop.demo.model.Cart;
-import java.util.Optional;
+import com.eshop.demo.model.User;
+
+
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
-    Optional<Cart> findByUserId(Long userId);
+    Cart findByUser(User user);
 }

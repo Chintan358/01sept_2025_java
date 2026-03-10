@@ -12,7 +12,9 @@ import com.eshop.demo.dto.UserDto;
 import com.eshop.demo.model.Role;
 import com.eshop.demo.model.User;
 import com.eshop.demo.payload.ResourceNotFoundException;
+import com.eshop.demo.repo.RoleRepository;
 import com.eshop.demo.repo.UserRepository;
+import com.eshop.demo.service.RoleService;
 import com.eshop.demo.service.UserService;
 
 @Service
@@ -20,6 +22,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserRepository repository;
+	
+	@Autowired
+	RoleService roleService;
 	
 	@Autowired
 	ModelMapper mapper;
@@ -60,6 +65,25 @@ public class UserServiceImpl implements UserService {
 		u.setRole(mapper.map(dto.getRole(), Role.class));
 		
 		return mapper.map(repository.save(u), UserDto.class);
+	}
+
+	@Override
+	public List<UserDto> retrivebyrole(Long id) {
+		
+		Role role = mapper.map(roleService.retrive(id), Role.class);
+		List<User> users = repository.findByRole(role);
+		List<UserDto> dtos = users.stream().map(u->{
+			return mapper.map(u, UserDto.class);
+		}).collect(Collectors.toList());
+			
+		return dtos;
+	}
+
+	@Override
+	public UserDto retrive(Long id) {
+		
+		User u = repository.findById(id).orElseThrow(()->new ResourceNotFoundException("User", "Id", id));
+		return mapper.map(u, UserDto.class);
 	}
 
 }

@@ -32,4 +32,5 @@ public class Order {
     private OrderStatus orderStatus = OrderStatus.PENDING;
 
     private LocalDateTime createdAt = LocalDateTime.now();
+    
 }
