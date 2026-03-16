@@ -38,4 +38,10 @@ public class CartServiceImpl implements CartService {
 		return dt;
 	}
 
+	@Override
+	public void delete(Long id) {
+		
+		cartRepository.deleteById(id);
+	}
+
 }

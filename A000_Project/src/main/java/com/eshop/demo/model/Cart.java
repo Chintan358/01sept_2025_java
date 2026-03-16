@@ -3,6 +3,7 @@ package com.eshop.demo.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -16,5 +17,8 @@ public class Cart {
     @JoinColumn(name = "user_id", unique = true)
     private User user;
 
+    @OneToMany(mappedBy = "cart")
+    List<CartItem> items;
+    
     private LocalDateTime createdAt = LocalDateTime.now();
 }
