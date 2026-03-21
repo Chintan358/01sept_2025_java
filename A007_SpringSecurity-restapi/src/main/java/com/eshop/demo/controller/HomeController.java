@@ -7,13 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.eshop.demo.model.User;
 import com.eshop.demo.repo.RoleRepo;
 import com.eshop.demo.repo.UserRepo;
 
 
-@Controller
+@RestController
 public class HomeController {
 
     private final RoleRepo roleRepo;
@@ -40,6 +41,7 @@ public class HomeController {
 		@GetMapping("/admin")
 		public String admin()
 		{
+			System.out.println("admin calling");
 			return "admin calling";
 		}
 		
