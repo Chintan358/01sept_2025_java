@@ -12,4 +12,5 @@ public interface UserService {
 		public UserDto update(UserDto dto, Long id);
 		public List<UserDto> retrivebyrole(Long id );
 		public UserDto retrive(Long id);
+		public UserDto byUsername(String username);
 }

@@ -6,6 +6,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,20 +36,26 @@ public class UserController {
 		@Autowired
 		UserService service;
 		
+		@Autowired
+		PasswordEncoder encoder;
+		
 		
 
     UserController(CartItemRepository cartItemRepository) {
         this.cartItemRepository = cartItemRepository;
     }
 	
+    	
 		@PostMapping("/")
-		public ResponseEntity<UserDto> create(@RequestBody UserDto dto,@RequestParam("role") Long rid)
+		public ResponseEntity<UserDto> create(@RequestBody UserDto dto)
 		{
-			dto.setRole(roleService.retrive(rid));
+			dto.setRole(roleService.retrive(2L));
+			dto.setPassword(encoder.encode(dto.getPassword()));
 			UserDto createUser =  service.create(dto);
 			return new ResponseEntity<>(createUser,HttpStatus.CREATED);			
 		}
 		
+		@PreAuthorize("hasRole('ADMIN')")
 		@GetMapping("/")
 		public ResponseEntity<List<UserDto>> list()
 		{
@@ -55,6 +63,7 @@ public class UserController {
 			return new ResponseEntity<>(all,HttpStatus.OK);
 		}
 		
+		@PreAuthorize("hasRole('ADMIN','USER')")
 		@PutMapping("/{id}")
 		public ResponseEntity<UserDto> update(@RequestBody UserDto dto,@PathVariable("id") Long id,@RequestParam("role") Long rid)
 		{
@@ -65,6 +74,7 @@ public class UserController {
 			
 		}
 		
+		@PreAuthorize("hasRole('ADMIN')")
 		@GetMapping("/role/{id}")
 		public ResponseEntity<List<UserDto>> retrivebyrole(@PathVariable("id") Long id)
 		{

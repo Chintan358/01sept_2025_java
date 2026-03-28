@@ -2,6 +2,7 @@ package com.eshop.demo.serviceimpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -83,6 +84,13 @@ public class UserServiceImpl implements UserService {
 	public UserDto retrive(Long id) {
 		
 		User u = repository.findById(id).orElseThrow(()->new ResourceNotFoundException("User", "Id", id));
+		return mapper.map(u, UserDto.class);
+	}
+
+	@Override
+	public UserDto byUsername(String username) {
+		
+		Optional<User> u = repository.findByName(username);
 		return mapper.map(u, UserDto.class);
 	}
 

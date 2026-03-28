@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public class RoleController {
 	@Autowired
 	RoleService service;
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/")
 	public ResponseEntity<RoleDto> create(@RequestBody RoleDto dto)
 	{
@@ -32,6 +34,7 @@ public class RoleController {
 		return new ResponseEntity<>(createdRole,HttpStatus.CREATED);
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/")
 	public ResponseEntity<List<RoleDto>> list()
 	{
@@ -39,6 +42,7 @@ public class RoleController {
 		return new ResponseEntity<>(roles,HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/{id}")
 	public ResponseEntity<RoleDto> retrive(@PathVariable("id") Long id)
 	{
@@ -46,6 +50,7 @@ public class RoleController {
 		return new ResponseEntity<>(role,HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/{id}")
 	public ResponseEntity<RoleDto> update(@RequestBody RoleDto dto,@PathVariable("id") Long id)
 	{
@@ -53,6 +58,7 @@ public class RoleController {
 		return new ResponseEntity<>(role,HttpStatus.CREATED);
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{id}")
 	public ResponseEntity delete(@PathVariable("id") Long id)
 	{

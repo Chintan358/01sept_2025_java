@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,9 @@ import com.eshop.demo.service.CartItemService;
 import com.eshop.demo.service.CartService;
 import com.eshop.demo.service.ProductService;
 import com.eshop.demo.service.UserService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/carts")
@@ -40,12 +44,16 @@ public class CartController {
 		@Autowired
 		CartItemService cartItemService;
 	
+		@PreAuthorize("hasRole('USER')")
 		@PostMapping("/")
-		public ResponseEntity<CartItemDto> create(@RequestBody CartItemDto dto,@RequestParam("product") Long Id)
+		public ResponseEntity<CartItemDto> create(@RequestBody CartItemDto dto,@RequestParam("product") Long Id,HttpServletRequest req)
 		{
 			dto.setProduct(productService.retrive(Id));
 			
-			UserDto user = service.retrive(2l);
+			HttpSession session = req.getSession();
+			String username =  (String) session.getAttribute("user");
+			
+			UserDto user = service.byUsername(username);
 			
 			CartDto isExist =   cartService.cartByUser(mapper.map(user, User.class));
 			if(isExist==null)
@@ -62,10 +70,14 @@ public class CartController {
 			return new ResponseEntity<>(created, HttpStatus.CREATED);
 		}
 		
+		@PreAuthorize("hasRole('USER')")
 		@GetMapping("/")
-		public ResponseEntity<CartDto> retrive()
+		public ResponseEntity<CartDto> retrive(HttpServletRequest req)
 		{
-			UserDto user = service.retrive(2l);
+			HttpSession session = req.getSession();
+			String username =  (String) session.getAttribute("user");
+			
+			UserDto user = service.byUsername(username);
 			CartDto c =  cartService.cartByUser(mapper.map(user, User.class));
 		
 			return new ResponseEntity<>(c,HttpStatus.OK);
