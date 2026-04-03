@@ -46,7 +46,9 @@
 	
 		        http.csrf(csrf->csrf.disable())
 		            .authorizeHttpRequests(auth -> auth
-		                .requestMatchers("/auth/**","/users/**","/categories/**","/products/**").permitAll()
+		                .requestMatchers("/auth/**","/users/**","/categories/**","/products/**","/payment/**", "/v3/api-docs/**",
+		                        "/swagger-ui/**",
+		                        "/swagger-ui.html").permitAll()
 		                .anyRequest().authenticated()
 		            ).sessionManagement(session -> session
 		                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
