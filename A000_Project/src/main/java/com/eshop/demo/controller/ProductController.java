@@ -58,8 +58,14 @@ public class ProductController {
 	}
 	
 	@GetMapping("/")
-	public ResponseEntity<List<ProductDto>> list() {
-		List<ProductDto> dtos = pservice.list();
+	public ResponseEntity<List<ProductDto>> list(
+			@RequestParam(defaultValue = "0",name="page" ) int page,
+			@RequestParam(defaultValue = "1", name="size") int size,
+			@RequestParam(defaultValue = "name" ,name="sortby") String sortby,
+			@RequestParam(defaultValue = "asc" ,name = "sortdir") String sortdir
+			)  
+	{
+		List<ProductDto> dtos = pservice.list(page,size,sortby, sortdir);
 		dtos.stream().map(p->{
 			p.setImage("localhost:8080/products/image/"+p.getImage());
 			return p;
