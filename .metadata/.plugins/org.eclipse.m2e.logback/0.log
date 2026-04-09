@@ -6513,3 +6513,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:s
 2026-04-04 14:16:39,864 [Worker-33: Launching A000_Project] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: D:\sts-4.31.0.RELEASE\plugins\com.google.guava.failureaccess_1.0.3.jar
 2026-04-04 14:16:39,866 [Worker-33: Launching A000_Project] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "D:\Chintan_wok\28Aug_2025_java\A000_Project":
 2026-04-04 14:16:39,867 [Worker-33: Launching A000_Project] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -Ppom.xml -B -Dstyle.color=always package
+2026-04-07 13:15:40,392 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
